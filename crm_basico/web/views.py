@@ -37,10 +37,11 @@ def registro_usuario(request):
         if form.is_valid():
             # Se valida la información ingresada antes de registrar el usuario en la BD.
             form.save()
-            autenticar_usuario(request, form.cleaned_data['username'], form.changed_data['password1'])
+            autenticar_usuario(request, form.cleaned_data['username'], form.cleaned_data['password1'])
             messages.success(request, "¡Te has registrado correctamente!")
             return redirect('index')
         
     else:
         form = FormularioRegistroUsuario()
-        return render(request, 'registro_usuario.html', {'form':form})
+
+    return render(request, 'registro_usuario.html', {'form':form})
