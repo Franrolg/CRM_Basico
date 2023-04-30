@@ -18,7 +18,7 @@ class FormularioRegistroUsuario(UserCreationForm):
 
         self.fields['username'].widget.attrs['class'] = 'form-control'
         self.fields['username'].widget.attrs['placeholder'] = 'Usuario'
-        self.fields['username'].label = None
+        self.fields['username'].label = ''
         self.fields['username'].help_text = '<span class="form-text text-muted"><small>Requerido. Solo puedes usar letras, números y los símbolos @/./+/-/_.</small></span>'
 
         self.fields['password1'].widget.attrs['class'] = 'form-control'

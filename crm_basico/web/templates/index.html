@@ -11,15 +11,13 @@
         <br>
         <form action="{% url 'index' %}" method="POST">
             {% csrf_token %}
-            <form>
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Usuario" name="usuario" required>
-                </div>
-                <div class="mb-4">
-                    <input type="password" class="form-control" placeholder="Contraseña" name="contrasena" required>
-                </div>
-                <button type="submit" class="btn btn-secondary">Ingresar</button>
-            </form>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Usuario" name="usuario" required>
+            </div>
+            <div class="mb-4">
+                <input type="password" class="form-control" placeholder="Contraseña" name="contrasena" required>
+            </div>
+            <button type="submit" class="btn btn-secondary">Ingresar</button>
         </form>
     {% endif %}
 </div>
