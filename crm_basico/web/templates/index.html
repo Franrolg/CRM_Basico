@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block contenido %}
-    <h1> BIENVENIDO </h1>
+
+<div class="col-md-6 offset-md-3">
+    {% if user.is_authenticated %}
+        <h1> BIENVENIDO </h1>
+    {% else %}
+        <h1> INICIAR SESIÓN </h1>
+        <br>
+        <form action="{% url 'index' %}" method="POST">
+            {% csrf_token %}
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Usuario" name="usuario" required>
+                </div>
+                <div class="mb-4">
+                    <input type="password" class="form-control" placeholder="Contraseña" name="contrasena" required>
+                </div>
+                <button type="submit" class="btn btn-secondary">Ingresar</button>
+            </form>
+        </form>
+    {% endif %}
+</div>
+
 {% endblock contenido %}
