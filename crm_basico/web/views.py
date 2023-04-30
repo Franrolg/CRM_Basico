@@ -24,3 +24,6 @@ def cerrar_sesion(request):
     logout(request)
     messages.success(request, "¡Has cerrado sesión!")
     return redirect('index')
+
+def registro_usuario(request):
+    return render(request, 'registro_usuario.html')
