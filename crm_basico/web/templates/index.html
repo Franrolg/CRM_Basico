@@ -5,9 +5,9 @@
 
 <div class="col-md-6 offset-md-3">
     {% if user.is_authenticated %}
-        <h1> BIENVENIDO </h1>
+        <h1 class='text-center mt-2 mb-5'> BIENVENIDO </h1>
     {% else %}
-        <h1> INICIAR SESIÓN </h1>
+        <h1 class='text-center mt-2 mb-5'> INICIAR SESIÓN </h1>
         <br>
         <form action="{% url 'index' %}" method="POST">
             {% csrf_token %}
@@ -17,7 +17,9 @@
             <div class="mb-4">
                 <input type="password" class="form-control" placeholder="Contraseña" name="contrasena" required>
             </div>
-            <button type="submit" class="btn btn-secondary">Ingresar</button>
+        <div class="d-grid col-md-6 mx-auto">
+            <button type="submit" class="btn btn-secondary mt-4">Ingresar</button>
+        </div>
         </form>
     {% endif %}
 </div>
